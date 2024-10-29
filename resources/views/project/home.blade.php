@@ -447,7 +447,7 @@
                                         <!-- End product name -->
                                         <!-- product price -->
                                         <div class="product-price">
-                                            <span class="old-price">$500.00</span>
+                                            {{-- <span class="old-price">$500.00</span> --}}
                                             <span class="price">$600.00</span>
                                         </div>
                                         <!-- End product price -->
