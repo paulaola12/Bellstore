@@ -14,8 +14,11 @@ class productController extends Controller
     {
        $products = products::latest()->get();
 
+    //    $allproducts = products::all()->get();
+
         return view('project.home', [
-            'products' => $products
+            'products' => $products,
+            // 'allproducts' => $allproducts
         ]
         
     );
@@ -28,7 +31,12 @@ class productController extends Controller
      */
     public function showproducts()
     {
-        return view('project.product');
+        $allproducts = products::latest()->paginate(12);
+        return view('project.product',[
+            'allproducts' => $allproducts
+        ]
+    
+    );
     }
 
 
