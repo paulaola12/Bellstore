@@ -62,6 +62,9 @@ class productController extends Controller
     public function show(string $id)
     {
         //
+        return view('project.single-product', [
+            'product' => $id
+        ]);
     }
 
     /**

@@ -6,13 +6,15 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\productController;
 
-// Route::get('/', function () {
-//     return view('project.home');
-// });
+Route::get('/single', function () {
+    return view('project.single-product');
+});
 
 Route::get('/', [productController::class, 'index'])->name('index');
 
 Route::get('/products', [productController::class, 'showproducts'])->name('products');
+
+Route::get('/single-products/{id}', [productController::class, 'show'])->name('single-product');
 
 // Cart 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
