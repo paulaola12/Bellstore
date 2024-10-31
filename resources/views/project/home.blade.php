@@ -54,9 +54,14 @@
                     <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
                         <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
                         <ul class="customer-links list-inline">
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Create Account</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
+                            @auth()
+                            <span class="fw-bold text-danger">Welcome, {{ auth()->user()->name }}</span>
+                                <li><a href="">Logout</a></li>
+                            @else
+                                <li><a href="{{ route('login') }}">Login</a></li>
+                                <li><a href="{{ route('register') }}">Create Account</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                            @endauth
                         </ul>
                     </div>
                 </div>

@@ -6,9 +6,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\productController;
 
-Route::get('/single', function () {
-    return view('project.single-product');
-});
+// Route::get('/single', function () {
+//     return view('project.single-product');
+// });
 
 Route::get('/', [productController::class, 'index'])->name('index');
 
@@ -26,3 +26,5 @@ Route::get('/checkout', [PaymentController::class, 'index'])->name('checkout');
 Route::get('/login', [UserController::class, 'index'])->name('login');
 
 Route::get('/register', [UserController::class, 'register'])->name('register');
+
+Route::post('/sign-up', [UserController::class, 'store'])->name('sign');

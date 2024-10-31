@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -28,6 +29,22 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $Formfield = $request -> validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phonenumber' => 'required',
+            'address' => 'required',
+            'password' => 'required|min:6',
+
+            
+
+        ]);
+
+        // dd($Formfield);
+        $Formfield['password'] = bcrypt($Formfield['password']);
+        $user = User::create($Formfield);
+        auth()->login($user);
+        return redirect('/');
     }
 
     /**
