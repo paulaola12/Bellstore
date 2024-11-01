@@ -47,6 +47,32 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
+    // public function logina(){
+    //     return view('project.login');
+    // }
+
+    Public function logina(Request $request){
+        $formField = $request -> validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if(auth()->attempt($formField)){
+            $request->session()->regenerate();
+            return redirect('/');
+        }
+
+        return redirect('/register');
+    }
+
     /**
      * Display the specified resource.
      */

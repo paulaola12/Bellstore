@@ -7,7 +7,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\productController;
 
 // Route::get('/single', function () {
-//     return view('project.single-product');
+//     return view('project.login');
 // });
 
 Route::get('/', [productController::class, 'index'])->name('index');
@@ -22,9 +22,14 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart');
 // payment controller
 Route::get('/checkout', [PaymentController::class, 'index'])->name('checkout');
 
+
+
 //Usercontroller
 Route::get('/login', [UserController::class, 'index'])->name('login');
+
+Route::post('/logina', [UserController::class, 'logina'])->name('logina');
 
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::post('/sign-up', [UserController::class, 'store'])->name('sign');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
