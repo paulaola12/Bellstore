@@ -22,7 +22,6 @@ class productController extends Controller
         ]
         
     );
-
     }
 
 
@@ -45,7 +44,8 @@ class productController extends Controller
      */
     public function create()
     {
-        //
+      
+        
     }
 
     /**
