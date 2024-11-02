@@ -7,8 +7,8 @@ use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\productController;
 
-// Route::get('/single', function () {
-//     return view('project.login');
+// Route::get('/singler', function () {
+//     return view('Admins.update');
 // });
 
 Route::get('/', [productController::class, 'index'])->name('index');
@@ -38,3 +38,4 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 //AdminController
 Route::get('/admin/create', [AdminsController::class, 'index'])->name('display');
 Route::post('/admin/create/figure', [AdminsController::class, 'create'])->name('create');
+Route::get('/update', [AdminsController::class, 'show'])->name('show');

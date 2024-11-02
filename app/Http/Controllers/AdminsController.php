@@ -50,9 +50,13 @@ class AdminsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(admins $admins)
+    public function show()
     {
+        $update = products::get();   
         //
+        return view('Admins.update', [
+          'update' => $update,
+        ]);
     }
 
     /**
