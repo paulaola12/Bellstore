@@ -38,4 +38,6 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 //AdminController
 Route::get('/admin/create', [AdminsController::class, 'index'])->name('display');
 Route::post('/admin/create/figure', [AdminsController::class, 'create'])->name('create');
-Route::get('/update', [AdminsController::class, 'show'])->name('show');
+Route::get('/admin/update', [AdminsController::class, 'show'])->name('show');
+Route::get('/admin/edit/{id}', [AdminsController::class, 'edit'])->name('admin');
+Route::put('/admin/update/{id}', [AdminsController::class, 'update'])->name('update');

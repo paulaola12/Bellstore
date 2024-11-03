@@ -62,17 +62,37 @@ class AdminsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(admins $admins)
+    public function edit(products $id)
     {
         //
+        return view('Admins.edit', [
+            'update_products' => $id,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, admins $admins)
+
+    //  i had to put in the model and the $id here
+    public function update(Request $request, products $id)
     {
         //
+        $formField = $request -> validate([
+           'product_name' => 'required',
+            'categorys_id' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'picture' => 'required', 
+        ]);
+
+        if($request->hasFile('picture')){
+            $formField['picture'] = $request->file('picture')->store('picture', 'public');
+        }
+
+        $id -> update($formField);
+
+        return redirect('/admin/update');
     }
 
     /**
