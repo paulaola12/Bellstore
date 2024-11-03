@@ -12,12 +12,18 @@ class productController extends Controller
      */
     public function index()
     {
-       $products = products::latest()->get();
+        $products = Products::oldest()->get();
+        $producta = Products::latest()->get();
+        $productar = Products::inRandomOrder()->get();
+
+
 
     //    $allproducts = products::all()->get();
 
         return view('project.home', [
             'products' => $products,
+            'producta' => $producta,
+            'productar' => $productar,
             // 'allproducts' => $allproducts
         ]
         
@@ -30,7 +36,7 @@ class productController extends Controller
      */
     public function showproducts()
     {
-        $allproducts = products::latest()->paginate(12);
+        $allproducts = products::inRandomOrder()->paginate(12);
         return view('project.product',[
             'allproducts' => $allproducts
         ]

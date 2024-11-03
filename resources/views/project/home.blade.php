@@ -365,13 +365,15 @@
                                         <!-- start product image -->
                                         <a href="product-layout-1.html" class="grid-view-item__link">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                            {{-- <img class="primary blur-up lazyload" data-src= "" alt="image" title="product"> --}}
+                                            <img src="{{ $product->picture ? asset('storage/' . $product->picture) : asset('assets/images/product-images/product-image1.jpg') }}">
+
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image1-1.jpg" src="assets/images/product-images/product-image1-1.jpg" alt="image" title="product">
+                                            {{-- <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image1-1.jpg" src="assets/images/product-images/product-image1-1.jpg" alt="image" title="product"> --}}
                                             <!-- End hover image -->
                                             <!-- Variant Image-->
-                                            <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                            {{-- <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product"> --}}
                                             <!-- Variant Image-->
                                             <!-- product label -->
                                             <div class="product-labels rounded"><span class="lbl on-sale">Sale</span> <span class="lbl pr-label1">new</span></div>
@@ -380,11 +382,11 @@
                                         <!-- end product image -->
                                         
                                         <!-- countdown start -->
-                                        <div class="saleTime desktop" data-countdown="2022/03/01"></div>
+                                        {{-- <div class="saleTime desktop" data-countdown="2022/03/01"></div> --}}
                                         <!-- countdown end -->
     
                                         <!-- Start product button -->
-                                        <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
+                                        {{-- <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
                                             <button class="btn btn-addto-cart" type="button" tabindex="0">Add To Cart</button>
                                         </form>
                                         <div class="button-set">
@@ -401,7 +403,7 @@
                                                     <i class="icon anm anm-random-r"></i>
                                                 </a>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!-- end product button -->
                                     </div>
                                     <!-- end product image -->
@@ -470,7 +472,7 @@
                     </div>
                     <div class="grid-products">
                         <div class="row">
-                            @foreach ( $products as $product)
+                            @foreach ( $producta as $product)
                                 @if ($loop->index<4)
                                     <div class="col-6 col-sm-2 col-md-3 col-lg-3 item">
                                         <!-- start product image -->
@@ -478,16 +480,17 @@
                                             <!-- start product image -->
                                             <a href="product-layout-1.html" class="grid-view-item__link">
                                                 <!-- image -->
-                                                <img class="primary blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <img class="primary blur-up lazyload" src="{{ $product->picture ? asset('storage/' . $product->picture) :asset('assets/images/product-images/product-image1.jpg') }}" alt="image" title="product">
+                                                                                                  
                                                 <!-- End image -->
                                                 <!-- Hover image -->
-                                                <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image1-1.jpg" src="assets/images/product-images/product-image1-1.jpg" alt="image" title="product">
+                                                {{-- <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image1-1.jpg" src="assets/images/product-images/product-image1-1.jpg" alt="image" title="product"> --}}
                                                 <!-- End hover image -->
                                                 <!-- Variant Image-->
-                                                <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                {{-- <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product"> --}}
                                                 <!-- Variant Image-->
                                                 <!-- product label -->
-                                                <div class="product-labels rounded"><span class="lbl on-sale">Sale</span> <span class="lbl pr-label1">new</span></div>
+                                                {{-- <div class="product-labels rounded"><span class="lbl on-sale">Sale</span> <span class="lbl pr-label1">new</span></div> --}}
                                                 <!-- End product label -->
                                             </a>
                                             <!-- end product image -->
@@ -551,77 +554,7 @@
 
 
                         {{-- 3rd row of pictures --}}
-                        <div class="row">
-
-                            @foreach ($products as $product)
-                                @if($loop->index<4)
-                                    <div class="col-6 col-sm-2 col-md-3 col-lg-3 item">
-                                        <!-- start product image -->
-                                        <div class="product-image">
-                                            <!-- start product image -->
-                                            <a href="product-layout-1.html" class="grid-view-item__link">
-                                                <!-- image -->
-                                                <img class="primary blur-up lazyload" data-src="assets/images/product-images/product-image5.jpg" src="assets/images/product-images/product-image5.jpg" alt="image" title="product" />
-                                                <!-- End image -->
-                                                <!-- Hover image -->
-                                                <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image5-1.jpg" src="assets/images/product-images/product-image5-1.jpg" alt="image" title="product" />
-                                                <!-- End hover image -->
-                                                <!-- Variant Image-->
-                                                <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image5.jpg" alt="image" title="product">
-                                                <!-- Variant Image-->
-                                            </a>
-                                            <!-- end product image -->
-                
-                                            <!-- Start product button -->
-                                            <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
-                                                <button class="btn btn-addto-cart" type="button" tabindex="0">Select Options</button>
-                                            </form>
-                                            <div class="button-set">
-                                                <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
-                                                    <i class="icon anm anm-search-plus-r"></i>
-                                                </a>
-                                                <div class="wishlist-btn">
-                                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                                        <i class="icon anm anm-heart-l"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="compare-btn">
-                                                    <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
-                                                        <i class="icon anm anm-random-r"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- end product button -->
-                                        </div>
-                                        <!-- end product image -->
-            
-                                        <!--start product details -->
-                                        <div class="product-details text-center">
-                                            <!-- product name -->
-                                            <div class="product-name">
-                                                <a href="product-layout-1.html">{{ $product->product_name }}</a>
-                                            </div>
-                                            <!-- End product name -->
-                                            <!-- product price -->
-                                            <div class="product-price">
-                                                <span class="price">{{ $product->price }}</span>
-                                            </div>
-                                            <!-- End product price -->
-                                            <!-- Color Variant -->
-                                            <ul class="swatches">
-                                                <li class="swatch small rounded gray" rel="assets/images/product-images/product-image16.jpg"></li>
-                                                <li class="swatch small rounded red" rel="assets/images/product-images/product-image5.jpg"></li>
-                                                <li class="swatch small rounded orange" rel="assets/images/product-images/product-image5-1.jpg"></li>
-                                                <li class="swatch small rounded yellow" rel="assets/images/product-images/product-image17.jpg"></li>
-                                            </ul>
-                                            <!-- End Variant -->
-                                        </div>
-                                        <!-- End product details -->
-                                    </div>
-                                @endif
-                            @endforeach
-                            
-                        </div>    
+                           
                             
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">

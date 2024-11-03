@@ -397,16 +397,16 @@
                                       <label>Select category</label>
                                           <select class="" name='categorys_id' >
                                               <option selected>Choose Product Category</option>
-                                              <option value="1">United States</option>
-                                              <option value="2">Canada</option>
-                                              <option value="3">France</option>
-                                              <option value="4">Germany</option>
-                                              <option value="5">United States</option>
-                                              <option value="6">Canada</option>
-                                              <option value="7">France</option>
-                                              <option value="8">Germany</option>
+                                              <option value="1">Male Dress</option>
+                                              <option value="2">Female Dress</option>
+                                              <option value="3">Accesories</option>
+                                              <option value="4">Foot Wear</option>
+                                              <option value="5">Under Wear</option>
+                                              <option value="6">Bags</option>
+                                              <option value="7">Jewelry</option>
+                                              {{-- <option value="8">Germany</option>
                                               <option value="9">France</option>
-                                              <option value="10">Germany</option>
+                                              <option value="10">Germany</option> --}}
                                           </select><span class="my-2 block"></span></div>
                                           @error('email')
                                               <p class="text-primary">{{ $message }}</p>

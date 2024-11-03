@@ -397,8 +397,8 @@
                                         </div>
                                     </div>
                                     <div class="lightboximages">
-                                        <a href="assets/images/product-detail-page/camelia-reversible-big1.jpg" data-size="1462x2048"></a>
-                                        <a href="assets/images/product-detail-page/camelia-reversible-big2.jpg" data-size="1462x2048"></a>
+                                        <a href="{{ $product->picture ? asset('storage/' . $product->picture) :asset('assets/images/collection/modern5.jpg') }}" data-size="1462x2048"></a>
+                                        {{-- <a href="assets/images/product-detail-page/camelia-reversible-big2.jpg" data-size="1462x2048"></a>
                                         <a href="assets/images/product-detail-page/camelia-reversible-big3.jpg" data-size="1462x2048"></a>
                                         <a href="assets/images/product-detail-page/camelia-reversible7-big.jpg" data-size="1462x2048"></a>
                                         <a href="assets/images/product-detail-page/camelia-reversible-big4.jpg" data-size="1462x2048"></a>
@@ -407,7 +407,7 @@
                                         <a href="assets/images/product-detail-page/camelia-reversible-big7.jpg" data-size="731x1024"></a>
                                         <a href="assets/images/product-detail-page/camelia-reversible-big8.jpg" data-size="731x1024"></a>
                                         <a href="assets/images/product-detail-page/camelia-reversible-big9.jpg" data-size="731x1024"></a>
-                                        <a href="assets/images/product-detail-page/camelia-reversible-big10.jpg" data-size="731x1024"></a>
+                                        <a href="assets/images/product-detail-page/camelia-reversible-big10.jpg" data-size="731x1024"></a> --}}
                                     </div>
         
                                 </div>
@@ -427,7 +427,7 @@
                                             <span class="visually-hidden">Regular price</span>
                                             {{-- <s id="ComparePrice-product-template"><span class="money">$600.00</span></s> --}}
                                             <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
-                                                <span id="ProductPrice-product-template"><span class="money">${{ $product->price }}</span></span>
+                                                <span id="ProductPrice-product-template"><span class="money">&#8358;{{ $product->price }}</span></span>
                                             </span>
                                             {{-- <span class="discount-badge"> <span class="devider">|</span>&nbsp;
                                                 <span>You Save</span>
@@ -438,14 +438,12 @@
                                             </span>   --}}
                                         </p>
                                         <div class="orderMsg" data-user="23" data-time="24">
-                                            <img src="assets/images/order-icon.jpg" alt="" /> <strong class="items">5</strong> sold in last <strong class="time">26</strong> hours</div>
+                                            {{-- <img src="assets/images/order-icon.jpg" alt="" /> <strong class="items">5</strong> sold in last <strong class="time">26</strong> hours</div> --}}
                                         </div>
                                     <div class="product-single__description rte">
                                         <ul>
-                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                                            <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
-                                            <li>Neque porro quisquam est qui dolorem ipsum quia dolor</li>
-                                            <li>Lorem Ipsum is not simply random text.</li>
+                                            <li>{{ $product->description }}</li>
+                                            
                                         </ul>
                                     </div>
                                     {{-- <div id="quantity_message">Hurry! Only  <span class="items">4</span>  left in stock.</div>
@@ -596,11 +594,8 @@
                                 <div class="product-description rte">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                                     <ul>
-                                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                                      <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
-                                      <li>Neque porro quisquam est qui dolorem ipsum quia dolor</li>
-                                      <li>Lorem Ipsum is not simply random text.</li>
-                                      <li>Free theme updates</li>
+                                      <li>{{ $product->description }}</li>
+                                      <
                                     </ul>
                                     <h3>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h3>
                                     <p>You can change the position of any sections such as slider, banner, products, collection and so on by just dragging and dropping.&nbsp;</p>

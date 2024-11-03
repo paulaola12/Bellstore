@@ -98,8 +98,9 @@ class AdminsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(admins $admins)
+    public function destroy(products $id)
     {
-        //
+        $id->delete();
+        return redirect('/admin/update');
     }
 }

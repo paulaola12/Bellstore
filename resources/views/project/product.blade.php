@@ -347,7 +347,7 @@
                         <div class="col-6 col-sm-6 col-md-3 col-lg-3">
                             <div class="colletion-item">
                                 <a href="/single-products/{{ $allproduct->id }} }}">
-                                    <img class="blur-up lazyload" data-src="assets/images/collection/collection-page1.jpg" src="assets/images/collection/collection-page1.jpg" alt="image" title="">
+                                    <img class="blur-up lazyload"  src="{{ $allproduct->picture ? asset('storage/' . $allproduct->picture) :asset('assets/images/collection/collection-page1.jpg')}}" alt="image" title="">
                                     <span class="title"><span>{{ $allproduct->product_name }}</span></span>
                                 </a>
                             </div>
