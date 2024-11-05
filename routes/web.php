@@ -19,6 +19,7 @@ Route::get('/single-products/{id}', [productController::class, 'show'])->name('s
 
 // Cart 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/save/{id}', [CartController::class, 'store']);
 
 // payment controller
 Route::get('/checkout', [PaymentController::class, 'index'])->name('checkout');

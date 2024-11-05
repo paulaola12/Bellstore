@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
+use App\Models\carts;
+use App\Models\products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -18,9 +21,31 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        // dd($request->all());
+
+        if(Auth::id()){
+            $product = products::find($id);
+
+            $cart = new carts;
+
+            $cart->name = auth()->user()->name;
+            $cart->email = auth()->user()->email;
+            $cart->phone = auth()->user()->phonenumber;
+            $cart->product_name = $product->product_name;
+            $cart->quantity = $request->quantity;
+            $cart->price = $product->price;
+            $cart->picture = $product->picture;
+            $cart->save();
+
+            return redirect('/products');
+        }
+        
+        else
+        {
+            return redirect('/login');
+        }
     }
 
     /**

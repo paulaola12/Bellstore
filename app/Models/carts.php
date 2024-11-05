@@ -13,5 +13,6 @@ class carts extends Model
         'product_name',
         'quantity',
         'price',
+        'picture',
     ];
 }
